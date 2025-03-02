@@ -5,19 +5,13 @@ It features a blog where users can read posts, comment on them, and like comment
 features such as creating, deleting, updating, and reading posts and comments. Users can upload their profile picture, and Firebase is used to store these images.
 
 ## Demo
-live demo [Website](https://blog-app-64zh.onrender.com), [Video](https://www.youtube.com/watch?v=UOEPYxzzwO8)
+live demo 
 
 ## Screenshots
 
-*Homepage of the Website*
-![Screenshot 2024-04-19 205404](https://github.com/ashishsen003/blog-app/assets/112822104/fe66473a-8da9-4c0d-8f19-ef6ce3096238)
-
-*Admin Dashboard for managing posts and comments*
-![Screenshot 2024-04-19 215303](https://github.com/ashishsen003/blog-app/assets/112822104/75e21535-9d98-493f-860e-e3efbe3eeb5d)
-
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/ashishsen003/blog-app.git`
+1. Clone the repository: `git clone https://github.com/anchorglobaltech/LensPolyBlog.git`
 ### Frontend Setup
 2. Navigate to the frontend folder `cd frontend`
 3. Install dependencies `npm install or yarn install`
