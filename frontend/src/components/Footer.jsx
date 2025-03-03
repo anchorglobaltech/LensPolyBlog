@@ -36,7 +36,7 @@ const FooterCom = () => {
             <div>
               <Footer.Title title="Follow Us" />
               <Footer.LinkGroup col>
-                <Footer.Link href="https://github.com/ashishsen003" target="_blank" rel="noopener noreferrer">
+                <Footer.Link href="https://github.com/anchorglobaltech/" target="_blank" rel="noopener noreferrer">
                   Github
                 </Footer.Link>
                 <Footer.Link href="#">Reddit</Footer.Link>
@@ -55,12 +55,12 @@ const FooterCom = () => {
         </div>
         <Footer.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
-          <Footer.Copyright href="#" by="Ashish's blog" year={new Date().getFullYear()} />
+          <Footer.Copyright href="#" by="LensPoly blog" year={new Date().getFullYear()} />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
             <Footer.Icon href="#" icon={BsFacebook} />
             <Footer.Icon href="#" icon={BsInstagram} />
             <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="https://github.com/ashishsen003" icon={BsGithub} />
+            <Footer.Icon href="https://github.com/anchorglobaltech/" icon={BsGithub} />
             <Footer.Icon href="#" icon={BsDribbble} />
           </div>
         </div>

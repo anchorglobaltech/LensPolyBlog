@@ -51,7 +51,7 @@ const DashUsers = () => {
 
   const handleDeleteUser = async () => {
     if (currentUser._id === '66239056da815c6a904f5d32') {
-      setError("you're not allowed to delete other users account only Ashish can mange that.")
+      setError("you're not allowed to delete other users account only AnchorGlobal can mange that.")
       setShowModal(false)
     } else {
       try {
