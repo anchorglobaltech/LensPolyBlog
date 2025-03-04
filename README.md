@@ -1,13 +1,11 @@
 # MERN Stack Blog Website with Admin Dashboard
 
-Welcome to the MERN Stack Blog Website! This project is a full-stack application built using MongoDB, Express.js, React, and Node.js. 
-It features a blog where users can read posts, comment on them, and like comments. Additionally, an admin dashboard is available with 
-features such as creating, deleting, updating, and reading posts and comments. Users can upload their profile picture, and Firebase is used to store these images.
+Welcome to the MERN Stack Blog Website! This full-stack application is developed using MongoDB, Express.js, React, and Node.js.
+It allows users to explore blog posts, leave comments, and like comments. Additionally, it includes an admin dashboard where admins can manage posts and comments—creating, editing, and deleting them.
+Users can also upload profile pictures, with Firebase handling image storage.
 
-## Demo
-live demo 
-
-## Screenshots
+🌐 Live Demo
+ https://lenspolyblog.onrender.com/
 
 ## Installation
 
@@ -33,7 +31,7 @@ live demo
 5. Leave comments on posts and like other user's comments.
 6. Access the admin dashboard by logging in with the following credentials:
    - **Email:** admin@gmail.com
-   - **Password:** admin@blog
+   - **Password:** Admin@12345
 7. In admin dashboard you can create a new post and can see all the users, posts and comments.
 
 ## Technologies Used
