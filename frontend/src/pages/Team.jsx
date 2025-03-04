@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import proprietor from "../images/proprietor.png";
 import beejay from "../images/beejay.jpeg";
+import banuso from "../images/banusor.jpeg";
+import victor from "../images/victor.jpeg";
 
 // Team Members Data
 const teamMembers = [
@@ -17,7 +19,7 @@ const teamMembers = [
     name: "Mr. Banuso Hammed",
     role: "School Librarian",
     description: "Passionate about knowledge management and research.",
-    image: "/images/librarian.jpg",
+    image: banuso,
     userId: "user456",
   },
   {
@@ -25,7 +27,7 @@ const teamMembers = [
     name: "Mr. Oni Victor",
     role: "Head of Multimedia Department",
     description: "Expert in media production, photography, and digital arts.",
-    image: "/images/multimedia.jpg",
+    image: victor,
     userId: "user789",
   },
   {
@@ -73,9 +75,10 @@ const Team = () => {
         {teamMembers.map((member) => (
           <div
             key={member.id}
-            className="bg-white shadow-lg rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105"
+            className="bg-white shadow-lg rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105 flex flex-col min-h-full"
           >
-            <div className="w-full h-100">
+            {/* Image */}
+            <div className="w-full h-72">
               <img
                 src={member.image}
                 alt={member.name}
@@ -83,26 +86,12 @@ const Team = () => {
                 loading="lazy"
               />
             </div>
-            <div className="p-6 text-center">
+
+            {/* Content */}
+            <div className="p-6 flex flex-col flex-grow text-center">
               <h2 className="text-2xl font-bold text-gray-900">{member.name}</h2>
               <p className="text-sm text-teal-600 font-semibold mt-1">{member.role}</p>
               <p className="text-gray-700 mt-3">{member.description}</p>
-
-              {/* Latest Post */}
-              {latestPosts[member.id] ? (
-                <div className="mt-5">
-                  <h3 className="text-lg font-semibold text-gray-800">Latest Post:</h3>
-                  <p className="text-sm text-gray-700">{latestPosts[member.id].title}</p>
-                  <a
-                    href={`/post/${latestPosts[member.id]._id}`}
-                    className="inline-block mt-2 text-teal-500 hover:underline text-sm"
-                  >
-                    Read More →
-                  </a>
-                </div>
-              ) : (
-                <p className="text-gray-500 text-sm mt-4">No recent posts available.</p>
-              )}
             </div>
           </div>
         ))}
