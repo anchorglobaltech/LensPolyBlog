@@ -6,7 +6,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../Redux/theme/themeSlice";
 import { signoutSuccess } from "../Redux/user/userSlice";
-import logo from "../logo.jpg"; // Import the logo from src directory
+import logo from "../logo.jpg";
 
 const Header = () => {
   const path = useLocation().pathname;
@@ -50,102 +50,73 @@ const Header = () => {
   };
 
   return (
-    <Navbar className="border-b-2">
-      {/* Logo & Blog Title */}
-      <Link to="/" className="flex items-center space-x-2">
-        <img src={logo} alt="LensPoly Logo" className="h-10 w-10 rounded-full" />
-        <span className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">
-          <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
-            LensPoly
-          </span>{" "}
-          Blog
-        </span>
-      </Link>
+    <header className="border-b-2 shadow-md bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4 flex flex-col items-center py-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-2 mb-4">
+          <img src={logo} alt="LensBlog Logo" className="h-23 w-23 rounded" />
+        </Link>
 
-      {/* Search Input */}
-      <form onSubmit={handleSubmit} className="hidden sm:block">
-        <TextInput
-          type="text"
-          placeholder="Search..."
-          rightIcon={AiOutlineSearch}
-          className="w-60"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </form>
+        {/* Navbar */}
+        <Navbar className="w-full flex flex-wrap justify-between items-center">
+          {/* Navigation Links */}
+          <div className="flex space-x-6 text-lg font-medium">
+            <Link to="/" className={path === "/" ? "text-blue-500" : "text-gray-700 dark:text-gray-300"}>Home</Link>
+            <Link to="/team" className={path === "/team" ? "text-blue-500" : "text-gray-700 dark:text-gray-300"}>Team</Link>
+            <Link to="/about" className={path === "/about" ? "text-blue-500" : "text-gray-700 dark:text-gray-300"}>About</Link>
+            <Link to="/dashboard?tab=profile" className={path === "/dashboard?tab=profile" ? "text-blue-500" : "text-gray-700 dark:text-gray-300"}>Profile</Link>
+          </div>
 
-      {/* Mobile Search Icon */}
-      <Link to="/search" className="sm:hidden">
-        <Button className="w-12 h-10" color="gray" pill>
-          <AiOutlineSearch />
-        </Button>
-      </Link>
+          {/* Search Input */}
+          <form onSubmit={handleSubmit} className="hidden md:flex">
+            <TextInput
+              type="text"
+              placeholder="Search..."
+              rightIcon={AiOutlineSearch}
+              className="w-64"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </form>
 
-      <div className="flex gap-2 md:order-2">
-        {/* Theme Toggle Button */}
-        <Button
-          className="w-12 h-10"
-          color="gray"
-          pill
-          onClick={() => dispatch(toggleTheme())}
-        >
-          {theme === "light" ? <FaMoon /> : <FaSun />}
-        </Button>
-
-        {/* User Profile Dropdown */}
-        {currentUser ? (
-          <Dropdown
-            arrowIcon={false}
-            inline
-            label={
-              <Avatar
-                alt="user"
-                img={currentUser.profilePicture}
-                rounded
-                className="border"
-              />
-            }
-          >
-            <Dropdown.Header>
-              <span className="block text-sm">{currentUser.username}</span>
-              <span className="block text-sm font-medium truncate">
-                {currentUser.email}
-              </span>
-            </Dropdown.Header>
-            <Link to={"/dashboard?tab=profile"}>
-              <Dropdown.Item>Profile</Dropdown.Item>
-              <Dropdown.Divider />
-            </Link>
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
-          </Dropdown>
-        ) : (
-          <Link to="/sign-in">
-            <Button gradientDuoTone="purpleToBlue" outline>
-              Sign In
+          {/* User & Theme Controls */}
+          <div className="flex items-center space-x-4">
+            <Button
+              className="w-10 h-10"
+              color="gray"
+              pill
+              onClick={() => dispatch(toggleTheme())}
+            >
+              {theme === "light" ? <FaMoon /> : <FaSun />}
             </Button>
-          </Link>
-        )}
 
-        {/* Mobile Navbar Toggle */}
-        <Navbar.Toggle />
+            {currentUser ? (
+              <Dropdown
+                arrowIcon={false}
+                inline
+                label={<Avatar alt="user" img={currentUser.profilePicture} rounded className="border" />}
+              >
+                <Dropdown.Header>
+                  <span className="block text-sm">{currentUser.username}</span>
+                  <span className="block text-sm font-medium truncate">{currentUser.email}</span>
+                </Dropdown.Header>
+                <Link to="/dashboard?tab=profile">
+                  <Dropdown.Item>Profile</Dropdown.Item>
+                  <Dropdown.Divider />
+                </Link>
+                <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+              </Dropdown>
+            ) : (
+              <Link to="/sign-in">
+                <Button gradientDuoTone="purpleToBlue" outline>
+                  Sign In
+                </Button>
+              </Link>
+            )}
+          </div>
+        </Navbar>
       </div>
-
-      {/* Navbar Links */}
-      <Navbar.Collapse>
-        <Navbar.Link active={path === "/"} as={"div"}>
-          <Link to="/">Home</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === "/team"} as={"div"}>
-          <Link to="/team">Team</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === "/dashboard?tab=profile"} as={"div"}>
-          <Link to="/dashboard?tab=profile">Profile</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === "/about"} as={"div"}>
-          <Link to="/about">About</Link>
-        </Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
+    </header>
   );
 };
 
