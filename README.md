@@ -5,11 +5,11 @@ It allows users to explore blog posts, leave comments, and like comments. Additi
 Users can also upload profile pictures, with Firebase handling image storage.
 
 🌐 Live Demo
- https://lenspolyblog.onrender.com/
+ https://Lensblog.onrender.com/
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/anchorglobaltech/LensPolyBlog.git`
+1. Clone the repository: `git clone https://github.com/anchorglobaltech/LensBlog.git`
 ### Frontend Setup
 2. Navigate to the frontend folder `cd frontend`
 3. Install dependencies `npm install or yarn install`

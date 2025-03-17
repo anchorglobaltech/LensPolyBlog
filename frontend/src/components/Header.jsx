@@ -53,7 +53,7 @@ const Header = () => {
     <Navbar className="border-b-2 flex flex-col items-center">
       {/* Logo & Blog Title */}
       <Link to="/" className="flex flex-col items-center">
-        <img src={logo} alt="LensPoly Logo" className="h-28 w-28 rounded md:h-36 md:w-36" />
+        <img src={logo} alt="Lens Logo" className="h-28 w-28 rounded md:h-36 md:w-36" />
      
       </Link>
 
