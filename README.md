@@ -9,7 +9,7 @@ Users can also upload profile pictures, with Firebase handling image storage.
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/anchorglobaltech/LensBlog.git`
+1. Clone the repository: `git clone https://github.com/anchorglobaltech/LensPolyBlog.git`
 ### Frontend Setup
 2. Navigate to the frontend folder `cd frontend`
 3. Install dependencies `npm install or yarn install`
