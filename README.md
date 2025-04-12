@@ -5,7 +5,7 @@ It allows users to explore blog posts, leave comments, and like comments. Additi
 Users can also upload profile pictures, with Firebase handling image storage.
 
 🌐 Live Demo
- https://Lensblog.onrender.com/
+ https://Lenspolyblog.onrender.com/
 
 ## Installation
 
